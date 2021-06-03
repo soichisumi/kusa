@@ -1,0 +1,1 @@
+for i in {1..3600} ; do d=`LANG=C date -v-$(($RANDOM % 365 +30))d "+%a %b %d %H:%M:%S:%N %Y -0900"`; git commit --allow-empty -m "YEAH $(echo -n $(gdate "+%a %b %d %H:%M:%S:%N %Y -0900") | md5sum)" --date="$d"; sleep 60; done
